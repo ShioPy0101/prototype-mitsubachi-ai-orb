@@ -82,3 +82,4 @@ Chrome/Edge/Chromiumが利用できる場合は、まず依存関係を入れた
 依存関係を入れたPythonで `benchmark.py --output benchmark-synthetic.json` を実行すると、正解ペア付きの合成画像6枚で固定5領域と新方式を比較します。実素材では `benchmark.py --folder "素材フォルダ" --limit 6 --frames 6 --repeats 3 --output benchmark-real.json` とします。動画は1本あたり先頭6サンプルまで、各方式3回の中央値を記録します。両方式とも特徴キャッシュを使わず、証跡の生成とフレームJPEG化を含め、同じ新照合・クラスタ処理を使うことで領域抽出方式の差を比較します（SQLite書き込み時間は除外）。
 
 精度評価には `--labels labels.json` を指定できます。形式は `{"positive_pairs": [["a.jpg", "b.jpg"]]}` で、対象ファイル内の他の組を負例とします。ラベルがない実素材に精度数値は付けません。合成データの精度を実素材へ一般化しないでください。計測結果は [合成データ](benchmark-synthetic.json) と [高知フォルダの写真6枚](benchmark-real.json) に記録しています。
+# prototype-mitsubachi-ai-orb
